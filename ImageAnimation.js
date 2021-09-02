@@ -12,8 +12,8 @@ fetch('imgData/' + imgData + '.txt').then(res => res.text()).then(src => myImage
 
     const canvas = document.getElementById('canvas')
 
-    canvas.width = 600
-    canvas.height = 906
+    canvas.width = 300
+    canvas.height = 700
     
 
     const ctx = canvas.getContext('2d')
@@ -67,7 +67,7 @@ fetch('imgData/' + imgData + '.txt').then(res => res.text()).then(src => myImage
     function animate() {
 
         ctx.globalAlpha = 0.05;
-        ctx.fillStyle = '#33495f'
+        ctx.fillStyle = 'black'
         ctx.fillRect(0, 0, canvas.width, canvas.height)
         ctx.globalAlpha = 0.2;
 
