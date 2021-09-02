@@ -1,19 +1,19 @@
 const myImage = new Image()
 
-var dataList = ['family', 'sh2', 'vk', 'shreya', 'sadaf2', 'sadaf3', 'mummy',  'pro' , 'sadaf']
+var dataList = [ 'sh2', 'vk', 'shreya', 'sadaf2', 'sadaf3', 'mummy',  'pro' , 'sadaf']
 // var dataList = ['family',  'vk', 'mummy', 'vidisha', 'pro']
 
+
+
+myImage.addEventListener('load', () => {
 let imgData = dataList[Math.floor(Math.random() * dataList.length)];
 
 fetch('imgData/' + imgData + '.txt').then(res => res.text()).then(src => myImage.src = src)
 
-
-myImage.addEventListener('load', () => {
-
     const canvas = document.getElementById('canvas')
 
-    canvas.width = 650
-    canvas.height = 706
+    canvas.width = 600
+    canvas.height = 806
     
 
     const ctx = canvas.getContext('2d')
