@@ -6,7 +6,7 @@ class Particle {
         this.x = Math.random() * w;
         this.y = 0;
         this.speed = 0;
-        this.vel = Math.random() * 0.5 + 1 ;
+        this.vel = Math.random() * 0.5 + 2 ;
         this.size = Math.random() * 1.5 + 1;
     }
 
@@ -17,7 +17,7 @@ class Particle {
         
         this.speed = mappedImage[this.posy][this.posx][0]
        
-        let movement = (2.5 - this.speed) + this.vel + 2
+        let movement = (2.5 - this.speed) + this.vel 
         this.y += movement  ;
 
         if (this.y >= this.h) {
