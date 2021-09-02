@@ -13,7 +13,7 @@ fetch('imgData/' + imgData + '.txt').then(res => res.text()).then(src => myImage
     const canvas = document.getElementById('canvas')
 
     canvas.width = 600
-    canvas.height = 806
+    canvas.height = 906
     
 
     const ctx = canvas.getContext('2d')
