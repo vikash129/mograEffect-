@@ -6,7 +6,7 @@ class Particle {
         this.x = Math.random() * w;
         this.y = 0;
         this.speed = 0;
-        this.vel = Math.random() * 0.5 ;
+        this.vel = Math.random() * 0.5 + 1 ;
         this.size = Math.random() * 1.5 + 1;
     }
 
