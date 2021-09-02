@@ -17,7 +17,7 @@ class Particle {
         
         this.speed = mappedImage[this.posy][this.posx][0]
        
-        let movement = (2.5 - this.speed) + this.vel + 1
+        let movement = (2.5 - this.speed) + this.vel + 2
         this.y += movement  ;
 
         if (this.y >= this.h) {
