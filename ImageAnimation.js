@@ -32,8 +32,8 @@ myImage.addEventListener('load', () => {
     grd1.addColorStop(0.2 , 'pink')
     grd1.addColorStop(0.3 , 'orange')
     grd1.addColorStop(0.4 , 'yellow')
-    grd1.addColorStop(0.5 , 'red')
-    grd1.addColorStop(0.6 , 'blue')
+    grd1.addColorStop(0.5 , '#FF7F7F')
+    grd1.addColorStop(0.6 , 'pink')
     grd1.addColorStop(0.7 , 'green')
     grd1.addColorStop(0.8 , 'turquoise')
     grd1.addColorStop(0.9 , 'violet')
@@ -47,7 +47,7 @@ myImage.addEventListener('load', () => {
 
 
     let particles = []
-    const noOfParticles = 7000
+    const noOfParticles = 5000
 
     let mappedImage = []
 
