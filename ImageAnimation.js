@@ -1,6 +1,6 @@
 const myImage = new Image()
 
-var dataList = [ 'sh2',  'shreya']
+var dataList = [ 'sh2',  'shreya','sh']
 // var dataList = ['family',  'vk', 'mummy', 'vidisha', 'pro']
 
 let imgData = dataList[Math.floor(Math.random() * dataList.length)];
