@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   background: #000;
-  overflow-y: hidden;
 }
 body{
   display: flex;
