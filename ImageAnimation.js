@@ -1,6 +1,6 @@
 const myImage = new Image()
 
-var dataList = [ 'sh2',  'shreya','sh']
+var dataList = [ 'sh2',  'shreya' , 'sh3']
 // var dataList = ['family',  'vk', 'mummy', 'vidisha', 'pro']
 
 let imgData = dataList[Math.floor(Math.random() * dataList.length)];
@@ -13,8 +13,8 @@ myImage.addEventListener('load', () => {
 
     let h = window.innerHeight
     let w = window.innerWidth
-    // let h = 100
-    // let w = 150
+    // let h = 500
+    // let w = 700
 
     const canvas = document.getElementById('canvas')
 
@@ -26,18 +26,20 @@ myImage.addEventListener('load', () => {
 
     const ctx = canvas.getContext('2d')
 
+
+
     const grd1 = ctx.createLinearGradient( 0, 0, canvas.width, canvas.height)
-    grd1.addColorStop(0 , 'green')
-    grd1.addColorStop(0.1 , 'white')
-    grd1.addColorStop(0.2 , 'pink')
-    grd1.addColorStop(0.3 , 'orange')
-    grd1.addColorStop(0.4 , 'yellow')
-    grd1.addColorStop(0.5 , '#FF7F7F')
-    grd1.addColorStop(0.6 , 'pink')
-    grd1.addColorStop(0.7 , 'green')
-    grd1.addColorStop(0.8 , 'turquoise')
-    grd1.addColorStop(0.9 , 'violet')
-    grd1.addColorStop(1 , 'rgb(190 135 34)')
+    // grd1.addColorStop(0 , 'green')
+    // grd1.addColorStop(0.1 , 'white')
+    // grd1.addColorStop(0.2 , 'pink')
+    // grd1.addColorStop(0.3 , 'orange')
+    // grd1.addColorStop(0.4 , 'yellow')
+    // grd1.addColorStop(0.5 , 'red')
+    // grd1.addColorStop(0.6 , 'blue')
+    // grd1.addColorStop(0.7 , 'green')
+    // grd1.addColorStop(0.8 , 'turquoise')
+    // grd1.addColorStop(0.9 , 'violet')
+    // grd1.addColorStop(1 , 'rgb(190 135 34)')
 
     ctx.drawImage(myImage, 0, 0, canvas.width, canvas.height)
 
@@ -47,7 +49,7 @@ myImage.addEventListener('load', () => {
 
 
     let particles = []
-    const noOfParticles = 5000
+    const noOfParticles = 7000
 
     let mappedImage = []
 
@@ -65,7 +67,7 @@ myImage.addEventListener('load', () => {
             const brightness = relativeBrightness(red, green, blue) // 0.1 - 1.9
 
             const cell = [
-                brightness,
+                brightness,`rgb(${red},${green},${blue})`
             ]
             // rgba(r , g , b , intensity)
 
@@ -81,9 +83,9 @@ myImage.addEventListener('load', () => {
 
     function relativeBrightness(r, g, b) {
         return Math.sqrt(
-            (r * r) * 0.3 +
-            (g * g) * 0.3 +
-            (b * b) * 0.3
+            (r * r) * 0.299 +
+            (g * g) * 0.587 +
+            (b * b) * 0.114
 
         ) / 100
     }
@@ -92,29 +94,33 @@ myImage.addEventListener('load', () => {
         for (let i = 0; i < noOfParticles; i++) {
             particles.push(new Particle(canvas.width, canvas.height))
         }
+        
     }
 
-    init()
 
     function animate() {
 
         ctx.globalAlpha = 0.05;
-        // ctx.fillStyle = '#33495f'
         ctx.fillStyle = '#000000'
         ctx.fillRect(0, 0, canvas.width, canvas.height)
         ctx.globalAlpha = 0.2;
+
 
         for (let i = 0; i < particles.length; i++) {
 
             particles[i].update(mappedImage)
             ctx.globalAlpha = particles[i].speed * 0.5;
-            particles[i].draw(ctx , grd1)
+            particles[i].draw(ctx , grd1 , mappedImage)
         }
 
 
         requestAnimationFrame(animate)
     }
+    init()
+
     animate()
+
+    
 
 })
 

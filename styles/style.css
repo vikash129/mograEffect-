@@ -13,3 +13,8 @@ canvas {
 
   border: 2px solid white; 
 }
+
+@font-face {
+  font-family: 'KulminoituvaRegular';
+  src: url('http://miketaylr.com/f/kulminoituva.ttf');
+}
