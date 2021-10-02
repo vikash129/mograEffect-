@@ -71,7 +71,7 @@ class Particle {
         if (this.random < 0.1) {
             // ctx.fillText(this.letter, this.x, this.y)
 
-            ctx.font = '32px serif'
+            ctx.font = '10px serif'
             ctx.textBaseline = 'top'
 
             ctx.fillText(`${popper} HAPPY BIRTHDAY${cake} SHREYA ${smiling}`, this.w/8, this.h / 14)
