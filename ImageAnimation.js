@@ -49,7 +49,7 @@ myImage.addEventListener('load', () => {
 
 
     let particles = []
-    const noOfParticles = 7000
+    const noOfParticles = 5000
 
     let mappedImage = []
 
